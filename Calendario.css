@@ -1,0 +1,762 @@
+@font-face {
+    font-family: Newsreader;
+    src: url(../Fonte/Newsreader-VariableFont_opsz\,wght.ttf);
+    font-family: Inter;
+    src: url(../Fonte/Inter-VariableFont_slnt\,wght.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-color: #171621;
+    color: aliceblue;
+    height: 100vh;
+}
+header {
+    display: flex;
+}
+.tH {
+    font-size: 45px;
+    font-weight: 500;
+    color: #FFF;
+    margin-top: 18px;
+}
+.dropdown {
+    position: relative;
+    width: 119px;
+    margin-right: 20px;
+    padding-right: 14px;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #292535;
+    padding: 15px;
+    border-radius: 0 0px 10px 0;
+    font-size: x-large;
+    z-index: 1000;
+    height: 90vh;
+    border-right: 3px solid #1f1f2e;
+}
+.dropdown:hover {
+    background-color: #292535;
+    border-radius: 10px 10px 0 0;
+    padding-right: 130px;
+}
+
+
+/* .dropdown2:hover {
+    background-color:#9F9F9F;}
+
+    .dropdown-menu2 a {
+        color: #292535;
+    } */
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+
+
+
+.dropdown-menu a:hover {
+    background-color: #171621;
+    border-radius: 6px;
+}
+#imgbarle2{
+    height: 32px;
+    
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    margin-bottom: 20px;
+}
+.container {
+    display: flex;
+    background-color: #292535;
+    width: 1200px;
+    min-height: 600px;
+    border-radius: 40px;
+    color: aliceblue;
+}
+.esquerda {
+    width: 100%;
+    padding: 20px;
+}
+.calendario {
+    background-color: #292535;
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    color: aliceblue;
+    overflow: hidden;
+}
+.mes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+    border-bottom: 2px solid #FFF;
+    /* linha de cima da calendario */
+}
+.h1 {
+    font-size: xxx-large;
+    font-family: 'Inter', sans-serif;
+    color: #FBCB4E;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    width: 14.28%;
+    height: 70px;
+    text-align: center;
+    font-size: xx-large;
+    cursor: pointer;
+}
+td:hover {
+    background-color: #fbca4e8c;
+    border-radius: 1000%;
+}
+.ativo  {
+    background-color: #3a3a4f;
+}
+.ativo  {
+    background-color: #3a3a4f;
+}
+.temevento {
+    position: relative;
+}
+.temevento::before {
+    content: '•';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: yellow;
+    font-size: 40px;
+}
+/* footer {
+    background-color: #292535;
+    height: 200px;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 650px;
+} */
+footer{
+    background-color: #292535;
+    height: 100px;
+}
+.Redes{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 200px;
+}
+
+figure {
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    cursor: pointer;
+}
+figure img {
+    height: 60px;
+}
+.hoje {
+    background-color: yellow;
+    color: #171621;
+}
+.baixo {
+    position: relative;
+    background-color: #292535;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    flex-direction: column;
+    font-size: xx-large;
+}
+.baixo li{
+    border-bottom: 2px solid;
+font-size: xx-large;
+padding: 10px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #292535;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    color: #fff;
+    border-radius: 10px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: x-large;
+}
+button {
+    background-color: #FBCB4E;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #292535;
+    font-size: 16px;
+}
+/* button:hover {
+    background-color: #fbca4e8c;
+} */
+.Centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+    .btn{
+        height: 25px;
+        width: 25px;
+        background-color: #EA6A69;
+    }
+    body.darkM{
+        background-color: #dadada;
+        color: #2C2C2C;
+    }
+    footer.darkM{
+        background-color: #bbbbbb;
+        color: #4d4d4d
+    } 
+    .animated-div{
+        height: 22px;
+        border: 1px black solid;
+        width: 40px;
+        background-color:#383838;
+        border-radius: 20px;
+        display: flex;
+        justify-content: baseline;
+        transition: all 1s ease;
+    }
+    .animated-div2{
+        background-color:  #d8d8d8;
+        height: 20px;
+        border: 1px black solid;
+        width: 20px;
+        border-radius: 20px;
+        transition: all 1s ease;
+    }
+    .anima1{
+        justify-content: end;
+        background-color:  #d8d8d8;
+    }
+    .anima2{
+        background-color:#383838;
+    }
+    
+    .con1{background-color:  #9F9F9F}
+    .con2{background-color:  #9F9F9F}
+    .con3{background-color:  #9F9F9F}
+    .tdescuro td{
+        color: #292535;
+    }
+    .thescuro th{
+        color: #292535;
+    }
+    .escuro {
+        color: #292535;
+    }
+    .desap{
+        display: none;
+    }
+    .btnmais2{
+        height: 45px;
+        width: 50px;
+    }
+
+/* Para dispositivos móveis: 320px a 480px */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    /* Estilos para dispositivos móveis */
+    #Titulo{
+        /* font-size: 16px; */
+        font-size: x-large;
+    }
+/* Img de saudação = #imgsaud */
+    .coment{
+        width: 300px;
+    }
+    #h2dest{
+        font-size: 22px;
+    }
+    #texcentro{
+        font-size: 16px;
+    }
+    .listinha{
+        font-size: 16px;
+    }
+    #h3dest{
+        font-size: 20px;
+    }
+    .LOGREDES{
+        width: 33px;
+        height: 33px;
+        margin-top: 15px;
+    }
+    #pfoo{
+        font-size: 13px;
+    }
+    #carrosel{
+        display: flex;
+        height: 320px;
+        width: 460px;
+        border-radius: 40px;
+        overflow-x:auto ;
+        scrollbar-width: thin;
+        scrollbar-color: #171621 #292535;
+        }
+    .maior{
+        height: 260px;
+        width: 400px;
+    }
+    .dropdown {
+        position: relative;
+        width: 119px;
+        margin-right: 20px;
+        padding-right: 14px;
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        background-color: #292535;
+        padding: 15px;
+        border-radius: 0 0px 10px 0;
+        font-size: x-large;
+        z-index: 1000;
+        height: 90vh;
+        border-right: 3px solid #1f1f2e;
+    }
+    .dropdown:hover {
+        background-color: #292535;
+        border-radius: 10px 10px 0 0;
+        /* padding-right: -10px; */
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 30px;
+        margin-top: 5px;
+    }
+    .dropdown-menu a:hover {
+        background-color: #171621;
+        border-radius: 6px;
+    }
+}
+
+  /* Para tablets: 481px a 768px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Estilos para tablets */
+    /* As fonte podem parecer pequenas ou grande em css ,porem as h1 ,h2 e h3 ja tem por padrão um tamanho inblicito ,assim os font-sizes são apenas complementos   */
+    #Titulo{
+
+        font-size: x-large;
+    }
+/* Img de saudação = #imgsaud */
+    .coment{
+        width: 450px;
+    }
+    #h2dest{
+        font-size: 28px;
+    }
+    #texcentro{
+        font-size: 20px;
+    }
+    .listinha{
+        font-size: 20px;
+    }
+    #h3dest{
+        font-size: 24px;
+    }
+    .LOGREDES{
+        width: 36px;
+        height: 36px;
+        margin-top: 15px;
+    }
+    #pfoo{
+        font-size: 14px;
+    }
+    #carrosel{
+        display: flex;
+        height: 320px;
+        width: 460px;
+        border-radius: 40px;
+        overflow-x:auto ;
+        scrollbar-width: thin;
+        scrollbar-color: #171621 #292535;
+        }
+    .maior{
+        height: 260px;
+        width: 400px;
+    }
+    .dropdown {
+        position: relative;
+        width: 119px;
+        margin-right: 20px;
+        padding-right: 14px;
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        background-color: #292535;
+        padding: 15px;
+        border-radius: 0 0px 10px 0;
+        font-size: x-large;
+        z-index: 1000;
+        height: 90vh;
+        border-right: 3px solid #1f1f2e;
+    }
+    .dropdown:hover {
+        background-color: #292535;
+        border-radius: 10px 10px 0 0;
+        /* padding-right: -10px; */
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 30px;
+        margin-top: 5px;
+    }
+    .dropdown-menu a:hover {
+        background-color: #171621;
+        border-radius: 6px;
+    }
+
+}
+
+
+  /* Para laptops: 769px a 1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Estilos para laptops */
+    #Titulo{
+        font-size: x-large;
+    }
+/* Img de saudação = #imgsaud */
+    .coment{
+        width: 600px;
+        /* width: 550px; */
+    }
+    #h2dest{
+        /* font-size: 28px; */
+        font-size: 32px;
+    }
+    #texcentro{
+        /* font-size: 20px; */
+        font-size: 24px;
+    }
+    .listinha{
+     /* font-size: 20px; */
+    font-size: 24px;
+    }
+    #h3dest{
+        /* font-size: 24px; */
+        font-size: 28px;
+    }
+    .LOGREDES{
+        width: 39px;
+        height: 39px;
+        margin-top: 15px;
+    }
+    #pfoo{
+        font-size: 15px;
+    }
+    #carrosel{
+        display: flex;
+        height: 320px;
+        width: 460px;
+        border-radius: 40px;
+        overflow-x:auto ;
+        scrollbar-width: thin;
+        scrollbar-color: #171621 #292535;
+        }
+    .maior{
+        height: 260px;
+        width: 400px;
+    }
+    .dropdown {
+        position: relative;
+        width: 119px;
+        margin-right: 20px;
+        padding-right: 14px;
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        background-color: #292535;
+        padding: 15px;
+        border-radius: 0 0px 10px 0;
+        font-size: x-large;
+        z-index: 1000;
+        height: 90vh;
+        border-right: 3px solid #1f1f2e;
+    }
+    .dropdown:hover {
+        background-color: #292535;
+        border-radius: 10px 10px 0 0;
+        /* padding-right: -10px; */
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 30px;
+        margin-top: 5px;
+    }
+    .dropdown-menu a:hover {
+        background-color: #171621;
+        border-radius: 6px;
+    }
+
+
+}
+
+  /* Para telas grandes: 1025px a 1200px */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Estilos para telas grandes */
+    #Titulo{
+
+        font-size: xx-large;
+    }
+/* Img de saudação = #imgsaud */
+    .coment{
+        width: 650px;
+    }
+    #h2dest{
+        font-size: 36px;
+    }
+    #texcentro{
+        font-size: 28px;
+    }
+    .listinha{
+        font-size: 28px;
+    }
+    #h3dest{
+        font-size: 32px;
+    }
+    .LOGREDES{
+        width: 42px;
+        height: 42px;
+        margin-top: 15px;
+    }
+    #pfoo{
+        font-size: 15px;
+    }
+    #carrosel{
+        display: flex;
+        height: 320px;
+        width: 460px;
+        border-radius: 40px;
+        overflow-x:auto ;
+        scrollbar-width: thin;
+        scrollbar-color: #171621 #292535;
+        }
+    .maior{
+        height: 260px;
+        width: 400px;
+    }
+    .dropdown {
+        position: relative;
+        width: 119px;
+        margin-right: 20px;
+        padding-right: 14px;
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        background-color: #292535;
+        padding: 15px;
+        border-radius: 0 0px 10px 0;
+        font-size: x-large;
+        z-index: 1000;
+        height: 90vh;
+        border-right: 3px solid #1f1f2e;
+    }
+    .dropdown:hover {
+        background-color: #292535;
+        border-radius: 10px 10px 0 0;
+        /* padding-right: -10px; */
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 30px;
+        margin-top: 5px;
+    }
+    .dropdown-menu a:hover {
+        background-color: #171621;
+        border-radius: 6px;
+    }
+
+}
+
+  /* Para telas muito grandes: 1201px ou mais ATUAL */ 
+@media only screen and (min-width: 1201px) {
+    /* Estilos para telas muito grandes */
+    #Titulo{
+        font-size: x-large;
+    }
+/* Img de saudação = #imgsaud */
+    .coment{
+        width: 650px;
+    }
+    #h2dest{
+        font-size: 40px;
+    }
+    #texcentro{
+        font-size: 32px;
+    }
+    .listinha{
+        font-size: 32px;
+    }
+    #h3dest{
+        font-size: 36px;
+    }
+    .LOGREDES{
+        width: 45px;
+        height: 45px;
+        margin-top: 15px;
+    }
+    #pfoo{
+        font-size: 16px;
+    }
+    #carrosel{
+        display: flex;
+        height: 320px;
+        width: 460px;
+        border-radius: 40px;
+        overflow-x:auto ;
+        scrollbar-width: thin;
+        scrollbar-color: #171621 #292535;
+        }
+    .maior{
+        height: 260px;
+        width: 400px;
+    }
+    .dropdown {
+        position: relative;
+        width: 119px;
+        margin-right: 20px;
+        padding-right: 14px;
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        background-color: #292535;
+        padding: 15px;
+        border-radius: 0 0px 10px 0;
+        font-size: x-large;
+        z-index: 1000;
+        height: 90vh;
+        border-right: 3px solid #1f1f2e;
+    }
+    .dropdown:hover {
+        background-color: #292535;
+        border-radius: 10px 10px 0 0;
+        /* padding-right: -10px; */
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 30px;
+        margin-top: 5px;
+    }
+    .dropdown-menu a:hover {
+        background-color: #171621;
+        border-radius: 6px;
+    }
+
+}

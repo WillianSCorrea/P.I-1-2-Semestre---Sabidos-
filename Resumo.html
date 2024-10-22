@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo - Sabidos</title>
+    <link rel="stylesheet" href="./Resumo.css">
+</head>
+<body>
+    <header>
+        <div class="dropdown nalinha">
+            <a href="#">
+                <img src="./SVG/Component 10.svg" style="margin: 25px 40px 20px 40px;" alt="Menu" id="imgbarle2" class="desap">
+                <img src="./Component 2.svg" style="margin: 25px 40px 20px 20px;" alt="Menu" id="imgbarle1" class="">
+            </a>           
+             <div class="dropdown-menu">
+                <a href="./home Interna.html">Home</a>
+                <a href="#">Perfil</a>
+                <a href="./Calendario .html">Agenda</a>
+                <a href="./Resumo.html">Resumos</a>
+				<div class="animated-div">
+                    <div  class="animated-div2">
+                        
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <h1 class="tH nalinha"id="titulopage">Resumo</h1>
+    </header>
+    <div class="caixa1">
+        <div class="caixa3">
+        <div class="caixa2">
+            <h2>Escreva no campo abaixo o seu resumo...</h2>
+        <input type="text" id ="tituloinput" placeholder ="Adicione um titulo..." > <br>
+        <textarea name="" id="textoinput" cols="100" rows="10" placeholder="Digite o Texto Aqui.."></textarea><br>
+        <button id="bu2" onclick = "addtarefas()"> Salvar</button>
+        </div></div>
+    </div>
+   <hr>
+   <div class="a44">
+    <ul id="tarefaslista">
+      
+    </ul>
+
+   </div>
+
+   <footer>
+    <div class="Redes">
+        <img src="./SVGS/REDES_SOCIAIS/INSTAGRAM.svg" alt="Logo_Instagram" class="LOGREDES">
+        <img src="./SVGS/REDES_SOCIAIS/XTWT.svg" alt="Logo_Twitter_X" class="LOGREDES">
+        <img src="./SVGS/REDES_SOCIAIS/GITHUB.svg" alt="Logo_GitHub" class="LOGREDES">
+    </div>
+    <div class="Centrado">
+        <p id="pfoo" class="texto Centrado">
+            © 2024 Sabidos. Todos os direitos reservados.
+        </p>
+    </div>
+</footer>
+
+
+</body>
+<script>
+    const tarefaslista = document.getElementById("tarefaslista");
+const titulo = document.getElementById("tituloinput");
+const texto = document.getElementById("textoinput");
+
+function addtarefas() {
+    const titulotexto = titulo.value.trim();
+    const textotexto = texto.value.trim();
+    if (titulotexto !== "" && textotexto !== "") {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span>${titulotexto}</span> <br>
+            <p> ${textotexto}</p> 
+
+        `;
+        tarefaslista.appendChild(li);
+        titulo.value = "";
+        texto.value = "";
+    }
+}
+            let body = document.querySelector("body");
+            let footer = document.querySelector("footer");
+            let animatedDiv = document.querySelector('.animated-div');
+            let animatedDiv2 = document.querySelector('.animated-div2');
+            let titulopage = document.getElementById("titulopage");
+            let imgbarle2 = document.getElementById('imgbarle2');
+            let imgbarle1 = document.getElementById('imgbarle1');
+            let dropdown_menu = document.querySelector('.dropdown-menu');
+            let dropdown = document.querySelector('.dropdown');
+            let butao = document.getElementById("bu2");
+            let h2 = document.querySelector("h2");
+            
+            
+            animatedDiv.addEventListener("click", ()=>{
+                        animatedDiv.classList.toggle("anima1");
+                        animatedDiv2.classList.toggle("anima2");
+
+                
+                body.classList.toggle("darkM");
+                footer.classList.toggle("darkM");
+                titulopage.classList.toggle("escuro")
+                imgbarle2.classList.toggle("desap")
+                imgbarle1.classList.toggle("desap")
+                dropdown.classList.toggle("dropdown2")
+                dropdown_menu.classList.toggle("dropdown-menu2")
+                dropdown.classList.toggle("dropdown")
+                dropdown_menu.classList.toggle("dropdown-menu")
+                h2.classList.toggle("escuro")
+                butao.classList.toggle("bu2")
+            })
+</script>
+</html>
