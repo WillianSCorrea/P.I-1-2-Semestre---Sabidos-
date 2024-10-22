@@ -1,4 +1,4 @@
-Sabidos²
+<h1>Sabidos²</h1>
 
 Sabidos² é um projeto desenvolvido como parte do projeto integrador da Fatec Matão, com o objetivo de aplicar conhecimentos em desenvolvimento web utilizando HTML, CSS e JavaScript. O tema central do projeto é Educação de Qualidade, proporcionando um ambiente digital que ajude estudantes a melhorar sua produtividade e organização nos estudos.
 
